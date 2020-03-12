@@ -223,6 +223,12 @@ int main()
 
             double incident_energy = 6.626 * 1e-034 * freq;
             int final, final_state;
+            
+            if(getStateEnergy(e.getState()) - getStateEnergy(e.getState() + 1) < incident_energy)
+            {
+                cout<<"Energy of incident radiation is too low for any excitation to happen";
+                goto out;
+            }
 
             for(final = e.getState() + 1; incident_energy <= getStateEnergy(final); final++);
             
