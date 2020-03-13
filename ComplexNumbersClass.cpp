@@ -126,7 +126,17 @@ class Complex
             return quo;
         }
 
-        bool operator = (Complex c)
+        Complex operator = (Complex c)
+        {
+            Complex eq;
+
+            eq.real = c.real;
+            eq.imag = c.imag;
+
+            return eq;
+        }
+
+        bool operator == (Complex c)
         {
             return (real == c.real && imag == c.imag);
         }
